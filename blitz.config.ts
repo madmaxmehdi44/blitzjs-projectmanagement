@@ -2,10 +2,10 @@ import { BlitzConfig, sessionMiddleware, simpleRolesIsAuthorized } from "blitz"
 
 const config: BlitzConfig = {
   middleware: [
-    // sessionMiddleware({
-    //   cookiePrefix: "ProjectManagement",
-    //   isAuthorized: simpleRolesIsAuthorized,
-    // }),
+    sessionMiddleware({
+      cookiePrefix: "ProjectManagement",
+      isAuthorized: simpleRolesIsAuthorized,
+    }),
   ],
   /* Uncomment this to customize the webpack config
   webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
