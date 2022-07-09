@@ -1,3 +1,4 @@
 module.exports = {
-  // preset: "blitz",
+  preset: "blitz",
+  passWithNoTests: true,
 }
