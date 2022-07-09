@@ -33,7 +33,7 @@ export default resolver.pipe(resolver.zod(ForgotPassword), async ({ email }) => 
     await forgotPasswordMailer({ to: user.email, token }).send()
   } else {
     // 7. If no user found wait the same time so attackers can't tell the difference
-    await new Promise((resolve) => setTimeout(resolve, 750))
+    await new Promise((resolve) => setTimeout(resolve, 1000 * 60))
   }
 
   // 8. Return the same result whether a password reset email was sent or not
