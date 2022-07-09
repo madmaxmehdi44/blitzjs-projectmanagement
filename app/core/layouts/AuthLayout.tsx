@@ -1,5 +1,6 @@
 import { ReactNode } from "react"
 import { Head } from "blitz"
+import NavBar from "../components/NavBar"
 
 type LayoutProps = {
   title?: string
@@ -17,7 +18,8 @@ const AuthLayout = ({ title, heading, children }: LayoutProps) => {
 
       <div className="flex justify-center">
         <div className="w-full md:w-2/3 lg:max-w-2xl mt-5">
-          <h2 className="text-xl mb-2">{heading}</h2>
+          {/* <h2 className="text-xl mb-2">{heading}</h2> */}
+          <NavBar />
           <div>{children}</div>
         </div>
       </div>

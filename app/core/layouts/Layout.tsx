@@ -1,6 +1,7 @@
 import { ReactNode } from "react"
 import { Head } from "blitz"
 import { Header } from "../components/Header"
+import NavBar from "../components/NavBar"
 
 type LayoutProps = {
   title?: string
@@ -14,7 +15,9 @@ const Layout = ({ title, children }: LayoutProps) => {
         <title>{title || "ProjectManagement"}</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Header />
+      {/* <Header /> */}
+      <NavBar />
+
       <div className="container mx-auto px-4">{children}</div>
     </>
   )
