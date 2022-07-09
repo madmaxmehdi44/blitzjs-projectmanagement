@@ -1,30 +1,29 @@
-import { AuthenticationError, Link, useMutation, Routes } from "blitz"
+import { AuthenticationError, Link, useMutation, Routes, PromiseReturnType } from "blitz"
 import { LabeledTextField } from "app/core/components/LabeledTextField"
 import { Form, FORM_ERROR } from "app/core/components/Form"
 import login from "app/auth/mutations/login"
 import { Login } from "app/auth/validations"
-import { CustomLink } from "app/core/components/CustomLink"
 
 type LoginFormProps = {
-  onSuccess?: () => void
+  onSuccess?: (user: PromiseReturnType<typeof login>) => void
 }
 
 export const LoginForm = (props: LoginFormProps) => {
   const [loginMutation] = useMutation(login)
 
   return (
-    <div>
+    <div className="flex flex-col w-full border-opacity-50 items-center justify-center " dir="rtl">
       <Form
-        submitText="Login"
+        submitText="ورود"
         schema={Login}
         initialValues={{ email: "", password: "" }}
         onSubmit={async (values) => {
           try {
-            await loginMutation(values)
-            props.onSuccess?.()
-          } catch (error) {
+            const user = await loginMutation(values)
+            props.onSuccess?.(user)
+          } catch (error: any) {
             if (error instanceof AuthenticationError) {
-              return { [FORM_ERROR]: "Sorry, those credentials are invalid" }
+              return { [FORM_ERROR]: "متاسفانه, مشخصات کاربری شما صحیح نیست" }
             } else {
               return {
                 [FORM_ERROR]:
@@ -34,15 +33,20 @@ export const LoginForm = (props: LoginFormProps) => {
           }
         }}
       >
-        <LabeledTextField name="email" label="Email" placeholder="Email" />
-        <LabeledTextField name="password" label="Password" placeholder="Password" type="password" />
+        <LabeledTextField name="email" label="پست الکترونیک" placeholder="پست الترونیک" />
+        <LabeledTextField name="password" label="رمز عبور" placeholder="رمز عبور" type="password" />
         <div>
-          <CustomLink href={Routes.ForgotPasswordPage()}>Forgot your password?</CustomLink>
+          <Link href={Routes.ForgotPasswordPage()}>
+            <a>رمز عبور را فراموش کرده اید؟</a>
+          </Link>
         </div>
       </Form>
+      <div className="divider">یا</div>
 
-      <div style={{ marginTop: "1rem" }}>
-        Or <CustomLink href={Routes.SignupPage()}>Sign Up</CustomLink>
+      <div className="btn glass bg-success hover:bg-warning w-1/2 grid card  rounded-box place-items-center">
+        <Link href={Routes.SignupPage()}>
+          <a>ثبت نام کنید</a>
+        </Link>
       </div>
     </div>
   )

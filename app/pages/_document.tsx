@@ -1,4 +1,4 @@
-import {Document, Html, DocumentHead, Main, BlitzScript /*DocumentContext*/} from 'blitz'
+import { Document, Html, DocumentHead, Main, BlitzScript /*DocumentContext*/ } from "blitz"
 
 class MyDocument extends Document {
   // Only uncomment if you need to customize this behaviour
@@ -9,9 +9,9 @@ class MyDocument extends Document {
 
   render() {
     return (
-      <Html lang="en">
+      <Html lang="en" data-theme="Write" className="no-scrollbar">
         <DocumentHead />
-        <body>
+        <body className="font-sans leading-normal tracking-normal">
           <Main />
           <BlitzScript />
         </body>

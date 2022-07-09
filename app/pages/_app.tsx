@@ -7,13 +7,12 @@ import {
   ErrorFallbackProps,
   useQueryErrorResetBoundary,
 } from "blitz"
+import React, { Suspense } from "react"
 import "app/core/styles/index.css"
+import ScaleLoader from "react-spinners/ScaleLoader"
 import LoginForm from "app/auth/components/LoginForm"
 
-import ScaleLoader from "react-spinners/ScaleLoader"
-import React, { Suspense } from "react"
-
-export default function App({ Component, pageProps }: AppProps) {
+export default function App({ Component, pageProps }: AppProps): JSX.Element {
   const getLayout = Component.getLayout || ((page) => page)
 
   return (

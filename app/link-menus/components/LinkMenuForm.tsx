@@ -10,7 +10,7 @@ export function LinkMenuForm<S extends z.ZodType<any, any>>(props: FormProps<S>)
       <LabeledTextField name="description" label="Description" placeholder="Description" />
       <LabeledTextField name="urlLink" label="Link" placeholder="Link" />
       {/* <LabeledTextField name="active" label="Active" placeholder="Active" /> */}
-      <div className="form-control">
+      {/* <div className="form-control">
         <label className="label cursor-pointer">
           <span className="label-text">Active</span>
           <input
@@ -21,7 +21,7 @@ export function LinkMenuForm<S extends z.ZodType<any, any>>(props: FormProps<S>)
             checked
           />
         </label>
-      </div>
+      </div> */}
     </Form>
   )
 }

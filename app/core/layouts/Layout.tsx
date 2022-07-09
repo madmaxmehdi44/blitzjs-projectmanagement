@@ -1,24 +1,32 @@
 import { ReactNode } from "react"
-import { Head } from "blitz"
-import { Header } from "../components/Header"
+import { Head, BlitzLayout } from "blitz"
+// import { Header } from "../components/Header"
 import NavBar from "../components/NavBar"
+import ModalIndex from "../components/ModalCompnent"
+import Footer from "../components/Footer"
 
-type LayoutProps = {
-  title?: string
-  children: ReactNode
-}
+// type LayoutProps = {
+//   title?: string
+//   children: ReactNode
+// }
 
-const Layout = ({ title, children }: LayoutProps) => {
+const Layout: BlitzLayout<{ title?: string; children?: React.ReactNode }> = ({
+  title,
+  children,
+}) => {
   return (
     <>
       <Head>
         <title>{title || "ProjectManagement"}</title>
         <link rel="icon" href="/favicon.ico" />
+        <meta charSet="utf-8" />
       </Head>
-      {/* <Header /> */}
+      <ModalIndex />
       <NavBar />
-
-      <div className="container mx-auto px-4">{children}</div>
+      <div className="">{children}</div>
+      <div>
+        <Footer />
+      </div>
     </>
   )
 }

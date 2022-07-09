@@ -1,0 +1,28 @@
+{
+  "linksData": [
+    {
+      "id": 1,
+      "name": "تماس با ما",
+      "url": "/categories",
+      "adderss": "South street"
+    },
+    {
+      "id": 2,
+      "name": "تماس با ما",
+      "url": "/categories",
+      "adderss": "North street"
+    },
+    {
+      "id": 3,
+      "name": "تماس با ما",
+      "url": "/categories",
+      "adderss": "East street"
+    },
+    {
+      "id": 4,
+      "name": "تماس با ما",
+      "url": "/categories",
+      "adderss": "West street"
+    }
+  ]
+}

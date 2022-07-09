@@ -43,7 +43,7 @@ export const EditLinkMenu = () => {
               })
               await setQueryData(updated)
               router.push(Routes.ShowLinkMenuPage({ linkMenuId: updated.id }))
-            } catch (error) {
+            } catch (error: any) {
               console.error(error)
               return {
                 [FORM_ERROR]: error.toString(),
@@ -64,7 +64,7 @@ const EditLinkMenuPage: BlitzPage = () => {
       </Suspense>
 
       <p>
-        <Link href={Routes.LinkMenusPage()}>
+        <Link href={Routes.NewLinkMenuPage()}>
           <a>LinkMenus</a>
         </Link>
       </p>

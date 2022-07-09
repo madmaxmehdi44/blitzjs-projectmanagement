@@ -22,7 +22,7 @@ const NewLinkMenuPage: BlitzPage = () => {
           try {
             const linkMenu = await createLinkMenuMutation(values)
             router.push(Routes.ShowLinkMenuPage({ linkMenuId: linkMenu.id }))
-          } catch (error) {
+          } catch (error: any) {
             console.error(error)
             return {
               [FORM_ERROR]: error.toString(),
@@ -32,7 +32,7 @@ const NewLinkMenuPage: BlitzPage = () => {
       />
 
       <p>
-        <Link href={Routes.LinkMenusPage()}>
+        <Link href={Routes.NewLinkMenuPage()}>
           <a>LinkMenus</a>
         </Link>
       </p>

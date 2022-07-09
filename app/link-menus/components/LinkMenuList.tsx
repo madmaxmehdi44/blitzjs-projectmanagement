@@ -1,11 +1,10 @@
 import { Suspense } from "react"
 import { Head, Link, usePaginatedQuery, useRouter, BlitzPage, Routes } from "blitz"
 import getLinkMenus from "app/link-menus/queries/getLinkMenus"
-import ProjectsPage from "../projects"
 
 // const ITEMS_PER_PAGE = 100
 
-export const LinkMenusPage = () => {
+export const LinkMenusList = () => {
   const [{ linkMenus, hasMore }] = usePaginatedQuery(getLinkMenus, {
     orderBy: { id: "desc" },
     // skip: ITEMS_PER_PAGE * page,
@@ -54,4 +53,4 @@ export const LinkMenusPage = () => {
 
 // LinkMenusPage.authenticate = false
 
-export default LinkMenusPage
+export default LinkMenusList

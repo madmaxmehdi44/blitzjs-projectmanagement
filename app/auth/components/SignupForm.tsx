@@ -1,9 +1,8 @@
-import { Link, Routes, useMutation } from "blitz"
+import { useMutation } from "blitz"
 import { LabeledTextField } from "app/core/components/LabeledTextField"
 import { Form, FORM_ERROR } from "app/core/components/Form"
 import signup from "app/auth/mutations/signup"
 import { Signup } from "app/auth/validations"
-import { CustomLink } from "app/core/components/CustomLink"
 
 type SignupFormProps = {
   onSuccess?: () => void
@@ -14,6 +13,8 @@ export const SignupForm = (props: SignupFormProps) => {
 
   return (
     <div>
+      <h1>Create an Account</h1>
+
       <Form
         submitText="Create Account"
         schema={Signup}
@@ -22,7 +23,7 @@ export const SignupForm = (props: SignupFormProps) => {
           try {
             await signupMutation(values)
             props.onSuccess?.()
-          } catch (error) {
+          } catch (error: any) {
             if (error.code === "P2002" && error.meta?.target?.includes("email")) {
               // This error comes from Prisma
               return { email: "This email is already being used" }
@@ -35,9 +36,6 @@ export const SignupForm = (props: SignupFormProps) => {
         <LabeledTextField name="email" label="Email" placeholder="Email" />
         <LabeledTextField name="password" label="Password" placeholder="Password" type="password" />
       </Form>
-      <div className="mt-2">
-        <CustomLink href={Routes.LoginPage()}>Already have account? Login</CustomLink>
-      </div>
     </div>
   )
 }

@@ -29,7 +29,7 @@ export const LinkMenu = () => {
           onClick={async () => {
             if (window.confirm("This will be deleted")) {
               await deleteLinkMenuMutation({ id: linkMenu.id })
-              router.push(Routes.LinkMenusPage())
+              router.push(Routes.NewLinkMenuPage())
             }
           }}
           style={{ marginLeft: "0.5rem" }}
@@ -44,11 +44,11 @@ export const LinkMenu = () => {
 const ShowLinkMenuPage: BlitzPage = () => {
   return (
     <div>
-      <p>
+      {/* <p>
         <Link href={Routes.LinkMenusPage()}>
           <a>LinkMenus</a>
         </Link>
-      </p>
+      </p> */}
 
       <Suspense fallback={<div>Loading...</div>}>
         <LinkMenu />
@@ -57,7 +57,7 @@ const ShowLinkMenuPage: BlitzPage = () => {
   )
 }
 
-ShowLinkMenuPage.authenticate = true
+ShowLinkMenuPage.authenticate = false
 ShowLinkMenuPage.getLayout = (page) => <Layout>{page}</Layout>
 
 export default ShowLinkMenuPage

@@ -9,7 +9,7 @@ import { useEffect } from "react"
 import { themeChange } from "theme-change"
 import { SunIcon, MoonIcon, MenuIcon, LockClosedIcon, XCircleIcon } from "@heroicons/react/solid"
 // import ModalIndex from "./ModalCompnent"
-// import LinkMenusList from "app/link-menus/components/LinkMenuList"
+import LinkMenusList from "app/link-menus/components/LinkMenuList"
 
 const MobileProfileLogin = () => {
   return (
@@ -118,7 +118,7 @@ export const NavBar = () => {
               tabIndex={0}
               className="p-1 mt-3 shadow menu menu-title min-w-max dropdown-content bg-base-100 rounded-box "
             >
-              {/* <LinkMenusList /> */}
+              <LinkMenusList />
             </ul>
           </label>
         </div>
@@ -167,7 +167,9 @@ export const NavBar = () => {
 
         <div className="navbar-center">
           <div className="hidden md:flex">
-            <Suspense fallback={<SkewLoader />}>{/* <LinkMenusList /> */}</Suspense>
+            <Suspense fallback={<SkewLoader />}>
+              <LinkMenusList />
+            </Suspense>
           </div>
         </div>
         <div className="navbar-end">
