@@ -21,7 +21,42 @@ const UserInfo = () => {
 const Home: BlitzPage = () => {
   return (
     <>
-      <Suspense fallback="Loading User Info...">
+      <header className="relative  flex items-start justify-start w-screen min-h-screen  overflow-hidden">
+        <div className="relative z-30 flex flex-wrap mx-8 my-8 items-center justify-center gap-8">
+          <label
+            htmlFor="my-modal-2"
+            className="relative btn n modal-button btn-secondary btn-block z-30  text-2xl  bg-opacity-40 rounded-x2"
+          >
+            خدمات واقعیت افزوده آرپوت
+          </label>
+          <div className="relative btn btn-secondary  z-30 btn-block  text-2xl  bg-opacity-40 rounded-x2">
+            نمونه کارهای تیم آرپوت
+          </div>
+        </div>
+        <video
+          className="absolute z-10 w-auto min-w-full min-h-screen inset-0 max-w-none"
+          src={"/video1.mp4"}
+          typeof="video/mp4"
+          autoPlay
+          muted
+          loop
+        ></video>
+      </header>
+      {/* <footer>
+        <a href="https://arput.com" target="_blank" rel="noopener noreferrer">
+          Powered by ARPut.com
+        </a>
+      </footer> */}
+    </>
+  )
+}
+
+Home.suppressFirstRenderFlicker = true
+Home.getLayout = (page) => <Layout title="Home">{page}</Layout>
+
+export default Home
+{
+  /* <Suspense fallback="Loading User Info...">
         <UserInfo />
       </Suspense>
       <div className="flex justify-center">
@@ -35,4 +70,5 @@ Home.suppressFirstRenderFlicker = true
 Home.getLayout = (page) => <Layout title="Home">{page}</Layout>
 Home.authenticate = true
 
-export default Home
+export default Home */
+}
