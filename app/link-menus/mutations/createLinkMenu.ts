@@ -4,6 +4,9 @@ import { z } from "zod"
 
 const CreateLinkMenu = z.object({
   name: z.string(),
+  description: z.string(),
+  urlLink: z.string(),
+  // active: z.boolean(),
 })
 
 export default resolver.pipe(resolver.zod(CreateLinkMenu), resolver.authorize(), async (input) => {
