@@ -24,7 +24,7 @@
     ]
   },
   "dependencies": {
-    "@prisma/client": "2.29.1",
+    "@prisma/client": "latest",
     "autoprefixer": "10",
     "blitz": "0.39.0",
     "final-form": "4.20.2",
@@ -45,7 +45,7 @@
     "prettier-plugin-prisma": "0.15.0",
     "pretty-quick": "3.1.1",
     "preview-email": "3.0.5",
-    "prisma": "2.29.1",
+    "prisma": "latest",
     "typescript": "~4.3"
   },
   "private": true
