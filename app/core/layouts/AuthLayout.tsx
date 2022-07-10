@@ -1,6 +1,11 @@
 import { ReactNode } from "react"
 import { Head } from "blitz"
 import NavBar from "../components/NavBar"
+import Footer from "../components/Footer"
+import { Header } from "../components/Header"
+import { BlitzLayout } from "./Layout"
+import ModalIndex from "../components/ModalCompnent"
+// import { BlitzLayout } from "./Layout"
 
 type LayoutProps = {
   title?: string
@@ -8,20 +13,24 @@ type LayoutProps = {
   children: ReactNode
 }
 
-const AuthLayout = ({ title, heading, children }: LayoutProps) => {
+const AuthLayout: BlitzLayout<{ title?: string; heading: string; children?: React.ReactNode }> = ({
+  title,
+  heading,
+  children,
+}) => {
   return (
     <>
       <Head>
         <title>{title || "ProjectManagement"}</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      {/* <Header /> */}
+      <ModalIndex />
 
-      <div className="flex justify-center">
-        <div className="w-full md:w-2/3 lg:max-w-2xl mt-5">
-          {/* <h2 className="text-xl mb-2">{heading}</h2> */}
-          <NavBar />
-          <div>{children}</div>
-        </div>
+      <NavBar />
+      <div className="">{children}</div>
+      <div>
+        <Footer />
       </div>
     </>
   )

@@ -10,6 +10,7 @@ import { themeChange } from "theme-change"
 import { SunIcon, MoonIcon, MenuIcon, LockClosedIcon, XCircleIcon } from "@heroicons/react/solid"
 // import ModalIndex from "./ModalCompnent"
 import LinkMenusList from "app/link-menus/components/LinkMenuList"
+import { Button } from "./Button"
 
 const MobileProfileLogin = () => {
   return (
@@ -29,32 +30,25 @@ const UserInfo = () => {
     return (
       <>
         <button
-          className="flex p-0 m-0 font-mono text-sm"
+          className="btn btn-warning btn-wide"
           onClick={async () => {
             await logoutMutation()
           }}
         >
-          <code className="text-sm flex gap-1">
+          خروج
+          {/* <code className="text-sm flex gap-1">
             {currentUser.name}
             <span className="badge badge-secondary">{currentUser.role}</span>
-          </code>
+          </code> */}
         </button>
       </>
     )
   } else {
     return (
       <>
-        <div className="flex flex-row gap-2 items-center justify-center">
-          <Link href={Routes.SignupPage()}>
-            <a className="justify-center btn btn-success btn-wide text-center bg-green-500 rounded-md">
-              <strong> ثبت نام </strong>
-            </a>
-          </Link>
-
-          <Link href={Routes.LoginPage()}>
-            <a className="btn btn-primary btn-wide">ورود </a>
-          </Link>
-        </div>
+        <Link href={Routes.LoginPage()}>
+          <a className="btn btn-primary btn-wide">ورود </a>
+        </Link>
       </>
     )
   }
@@ -103,6 +97,7 @@ export const NavBar = () => {
   }, [])
   return (
     <>
+      {/* <UserInfo /> */}
       <div
         className="sticky bg-opacity-20  glass top-0 z-50 navbar   items-center justify-center "
         dir="rtl"
@@ -146,13 +141,12 @@ export const NavBar = () => {
                   <label htmlFor="my-modal-4">پروفایل</label>
                 </li>
                 <li>
-                  <label htmlFor="my-modal-6">ورود</label>
-                </li>
-                <li>
                   <label htmlFor="my-modal-5">ثبت نام</label>
                 </li>
                 <li>
-                  <a>خروج</a>
+                  <Suspense fallback={"loading..."}>
+                    <UserInfo />
+                  </Suspense>
                 </li>
               </ul>
             </label>
@@ -179,5 +173,4 @@ export const NavBar = () => {
     </>
   )
 }
-
 export default NavBar

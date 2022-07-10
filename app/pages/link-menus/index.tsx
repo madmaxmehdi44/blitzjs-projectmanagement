@@ -52,6 +52,7 @@ export const LinkMenusPage = () => {
 //   )
 // }
 
-// LinkMenusPage.authenticate = false
+LinkMenusPage.authenticate = false
+LinkMenusPage.suppressFirstRenderFlicker = true
 
 export default LinkMenusPage
