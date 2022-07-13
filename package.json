@@ -31,6 +31,7 @@
     "blitz": "0.45.4",
     "final-form": "4.20.7",
     "postcss": "8",
+    "plyr-react": "5.0.2",
     "react": "alpha",
     "react-dom": "alpha",
     "react-final-form": "6.5.9",
