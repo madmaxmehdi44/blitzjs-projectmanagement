@@ -15,7 +15,7 @@ import getService from "app/services/queries/getService"
 import deleteService from "app/services/mutations/deleteService"
 // import { PlayPause } from "app/core/components/PlayPause"
 // import MyPlyrVideo from "app/core/components/vidply"
-// import PlyrComponent from "app/core/components/vidply"
+import PlyrComponent from "app/core/components/vidply"
 import { useCurrentUser } from "app/core/hooks/useCurrentUser"
 
 export const Service = () => {
@@ -54,7 +54,7 @@ export const Service = () => {
               </p>
 
               <div className="w-full p-0 overflow-hidden mx-auto border-violet-900 border-2  rounded-xl shadow-sm shadow-violet-800 ">
-                {/* <PlyrComponent video_url={service.video_url} /> */}
+                <PlyrComponent video_url={service.video_url} />
               </div>
               <p
                 className="text-2xl leading-relaxed tracking-widest
@@ -129,7 +129,7 @@ const ShowServicePage: BlitzPage = () => {
   )
 }
 
-ShowServicePage.authenticate = true
+// ShowServicePage.authenticate = false
 ShowServicePage.getLayout = (page) => <Layout>{page}</Layout>
 
 export default ShowServicePage

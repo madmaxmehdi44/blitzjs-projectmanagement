@@ -7,11 +7,15 @@ const GetService = z.object({
   id: z.number().optional().refine(Boolean, "Required"),
 })
 
-export default resolver.pipe(resolver.zod(GetService), resolver.authorize(), async ({ id }) => {
-  // TODO: in multi-tenant app, you must add validation to ensure correct tenant
-  const service = await db.service.findFirst({ where: { id } })
+export default resolver.pipe(
+  resolver.zod(GetService),
+  // resolver.authorize(),
+  async ({ id }) => {
+    // TODO: in multi-tenant app, you must add validation to ensure correct tenant
+    const service = await db.service.findFirst({ where: { id } })
 
-  if (!service) throw new NotFoundError()
+    if (!service) throw new NotFoundError()
 
-  return service
-})
+    return service
+  }
+)

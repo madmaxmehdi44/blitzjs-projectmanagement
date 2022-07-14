@@ -5,6 +5,11 @@ import { z } from "zod"
 const UpdateProject = z.object({
   id: z.number(),
   name: z.string(),
+  slug: z.string(),
+  short_description: z.string(),
+  long_description: z.string(),
+  image_url: z.string(),
+  video_url: z.string(),
 })
 
 export default resolver.pipe(

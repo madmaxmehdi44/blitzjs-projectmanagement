@@ -64,12 +64,16 @@ enum TokenType {
 }
 
 model Project {
-  id          Int      @id @default(autoincrement())
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
-  name        String
-  description String
-  tasks       Task[]
+  id                Int      @id @default(autoincrement())
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+  name              String
+  slug              String?
+  short_description String?
+  long_description  String?
+  image_url         String?
+  video_url         String?
+  tasks             Task[]
 }
 
 model Task {
