@@ -116,7 +116,7 @@ const ServicesPage: BlitzPage = (props) => {
   )
 }
 
-// ServicesPage.authenticate = false
+ServicesPage.authenticate = false
 ServicesPage.getLayout = (page) => <Layout>{page}</Layout>
 
 export default ServicesPage

@@ -11,12 +11,12 @@ export const LinkMenusPage = () => {
     // skip: ITEMS_PER_PAGE * page,
     // take: ITEMS_PER_PAGE,
   })
+  let cssClass = "text-xl btn md:text-sm lg:text-xl"
 
   const catchLastId = linkMenus[0]?.id
   return (
     <div className="btn-group" dir="ltr">
-      {linkMenus.map((linkMenu) => {
-        let cssClass = "text-xl btn md:text-sm lg:text-xl"
+      {/* {linkMenus.map((linkMenu) => {
         linkMenu.id === 1
           ? (cssClass = "text-xl rounded-full btn bg-violet-500 glass md:text-sm lg:text-xl")
           : linkMenu.id === catchLastId
@@ -31,7 +31,7 @@ export const LinkMenusPage = () => {
             </Link>
           </>
         )
-      })}
+      })} */}
     </div>
 
     //   {/* <button disabled={page === 0} onClick={goToPreviousPage}>

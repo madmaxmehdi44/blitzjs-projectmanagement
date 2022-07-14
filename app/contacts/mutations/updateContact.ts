@@ -5,6 +5,9 @@ import { z } from "zod"
 const UpdateContact = z.object({
   id: z.number(),
   name: z.string(),
+  email: z.string(),
+  message: z.string(),
+  mobile: z.string(),
 })
 
 export default resolver.pipe(

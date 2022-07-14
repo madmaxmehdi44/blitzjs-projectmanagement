@@ -17,6 +17,7 @@ import deleteService from "app/services/mutations/deleteService"
 // import MyPlyrVideo from "app/core/components/vidply"
 import PlyrComponent from "app/core/components/vidply"
 import { useCurrentUser } from "app/core/hooks/useCurrentUser"
+import { ScaleLoader } from "react-spinners"
 
 export const Service = () => {
   // const videoElement = useRef(null)
@@ -54,7 +55,9 @@ export const Service = () => {
               </p>
 
               <div className="w-full p-0 overflow-hidden mx-auto border-violet-900 border-2  rounded-xl shadow-sm shadow-violet-800 ">
-                <PlyrComponent video_url={service.video_url} />
+                <Suspense fallback={<ScaleLoader />}>
+                  <PlyrComponent video_url={service.video_url} />
+                </Suspense>
               </div>
               <p
                 className="text-2xl leading-relaxed tracking-widest
@@ -129,7 +132,7 @@ const ShowServicePage: BlitzPage = () => {
   )
 }
 
-// ShowServicePage.authenticate = false
+ShowServicePage.authenticate = false
 ShowServicePage.getLayout = (page) => <Layout>{page}</Layout>
 
 export default ShowServicePage

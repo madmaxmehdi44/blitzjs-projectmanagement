@@ -9,6 +9,7 @@ import React, { Suspense, useState, useRef } from "react"
 import { dynamic } from "blitz"
 // import { Editor, EditorState } from "draft-js"
 import TextAreaField from "app/core/components/TextAreaField"
+import LabeledTextAreaField from "app/core/components/LabeledTextAreaField"
 
 // const Editor = dynamic(() => import("react-draft-wysiwyg").then((mod) => mod.Editor), {
 //   ssr: false,
@@ -63,7 +64,7 @@ export function ServiceForm<S extends z.ZodType<any, any>>(props: FormProps<S>) 
                     </div>
                   </Suspense> */}
 
-                  <TextAreaField
+                  <LabeledTextAreaField
                     name="long_description"
                     label="توضیحات بیشتر"
                     placeholder="توضیحات بیشتر"

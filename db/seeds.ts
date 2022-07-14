@@ -7,13 +7,13 @@ import db from "./index"
  * realistic data.
  */
 const seed = async () => {
-  await db.linkMenu.create({
-    data: {
-      name: "خانه",
-      description: "خانه",
-      urlLink: "/",
-    },
-  })
+  // await db.linkMenu.create({
+  //   data: {
+  //     name: "خانه",
+  //     description: "خانه",
+  //     urlLink: "/",
+  //   },
+  // })
 }
 // {
 //   id: 2,
