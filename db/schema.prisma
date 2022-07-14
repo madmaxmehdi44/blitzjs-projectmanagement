@@ -108,3 +108,9 @@ model Service {
   image_url         String?
   video_url         String?
 }
+
+model Contact {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
