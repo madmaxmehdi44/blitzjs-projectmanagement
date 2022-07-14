@@ -18,22 +18,22 @@ const AuthLayout: BlitzLayout<{ title?: string; heading: string; children?: Reac
   heading,
   children,
 }) => {
-  return (
-    <>
+  return 
+    <>{
       <Head>
         <title>{title || "ProjectManagement"}</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      {/* <Header /> */}
+      // {/* <Header /> */}
       <ModalIndex />
 
       <NavBar />
       <div className="">{children}</div>
       <div>
         <Footer />
-      </div>
+      </div>}
     </>
-  )
+  
 }
 
 export default AuthLayout
