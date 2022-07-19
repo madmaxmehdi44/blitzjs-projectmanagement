@@ -21,7 +21,7 @@ const Home: BlitzPage = (props) => {
   return (
     <>
       <div className="relative  flex items-start justify-start w-full h-screen  overflow-hidden">
-        <div className="relative z-30 flex flex-wrap mx-8 my-8 items-center justify-center gap-8">
+        {/* <div className="relative z-30 flex flex-wrap mx-8 my-8 items-center justify-center gap-8">
           <label
             htmlFor="my-modal-2"
             className="relative btn n modal-button btn-secondary btn-block z-30  text-2xl  bg-opacity-40 rounded-x2"
@@ -31,7 +31,7 @@ const Home: BlitzPage = (props) => {
           <div className="relative btn btn-secondary  z-30 btn-block  text-2xl  bg-opacity-40 rounded-x2">
             نمونه کارهای تیم آرپوت
           </div>
-        </div>
+        </div> */}
         <video
           className="absolute z-10 w-auto min-w-full min-h-screen inset-0 max-w-none"
           src={"/video1.mp4"}

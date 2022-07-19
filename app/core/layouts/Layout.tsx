@@ -33,7 +33,7 @@ const Layout: BlitzLayout<{ title?: string; children?: React.ReactNode }> = ({
         <meta charSet="utf-8" />
       </Head>
 
-      <ModalIndex />
+      {/* <ModalIndex /> */}
       {/* <Header /> */}
       <NavBar />
       <div className="">{children}</div>

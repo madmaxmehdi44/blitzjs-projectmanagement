@@ -126,12 +126,11 @@ export const NavBar = () => {
                 <ToggleTheme />
               </Suspense>
             </label>
-
+{/* 
             <label tabIndex={0} className="dropdown dropdown-content">
               <Suspense fallback={<ScaleLoader />}>
                 <ProfileLogin />
               </Suspense>
-              {/* <div className="navbar-center hidden lg:flex"></div> */}
 
               <ul
                 tabIndex={0}
@@ -149,13 +148,7 @@ export const NavBar = () => {
                   </Suspense>
                 </li>
               </ul>
-            </label>
-            {/* </div> */}
-            {/* <div className="absolute top-1 right-28 hidden p-1 md:flex"> */}
-            {/* <Suspense fallback={<SkewLoader />}>
-            <Links />
-          </Suspense> */}
-            {/* </div> */}
+            </label> */}
           </div>
         </div>
 
@@ -167,7 +160,7 @@ export const NavBar = () => {
           </div>
         </div>
         <div className="navbar-end">
-          <a className="btn btn-secondary  btn-circle blur-[1px] hover:blur-none">آرپوت</a>
+          <a className="btn btn-secondary  btn-circle">آرپوت</a>
         </div>
       </div>
     </>
