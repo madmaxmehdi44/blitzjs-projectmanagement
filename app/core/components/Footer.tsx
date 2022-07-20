@@ -16,7 +16,7 @@ const Footer = () => {
         <p>ARPut.com</p>
         <p>Copyright © 2022 - All right reserved</p>
       </div>
-      <div className="flex  gap-2 place-self-center justify-self-end">
+      <div className="flex  gap-4 place-self-center justify-self-end">
         <a>
           <svg
             xmlns="http://www.w3.org/2000/svg"

@@ -38,7 +38,7 @@ const Layout: BlitzLayout<{ title?: string; children?: React.ReactNode }> = ({
           <NavBar2 />
         </header>
         <main className="mb-auto no-scrollbar overflow-scroll">{children}</main>
-        <footer className="bg-blue-500 "><Footer /></footer>
+        <footer className="bg-blue-500 h-16"><Footer /></footer>
       </div>
       {/* <NavBar />
         <div className="max-h-screen no-scrollbar overflow-scroll">{children}</div>
