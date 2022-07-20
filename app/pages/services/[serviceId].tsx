@@ -35,7 +35,7 @@ export const Service = () => {
       </Head>
       <div className="flex min-h-full items-center justify-center align-middle">
         {/* <div className=""></div> */}
-        <div className="max-w-4xl mt-10 mb-5 p-2 shadow-lg shadow-violet-800  text-center  justify-center rounded-lg">
+        <div className="flex w-full mt-10 mb-5 p-2 shadow-lg shadow-violet-800  text-center  justify-center rounded-lg">
           <div className="rounded-lg min-w-full ">
             <h1 className="text-center text-2xl font-bold leading-relaxed tracking-widest rounded-lg shadow-lg   shadow-secondary  p-4 items-center justify-center align-middle">
               {service.name}
@@ -120,11 +120,11 @@ export const Service = () => {
 const ShowServicePage: BlitzPage = () => {
   return (
     <>
-      <p className="text-2x justify-center items-center ">
-        <Link href={Routes.ServicesPage()}>
-          <a>خدمات</a>
+     
+        <Link  href={Routes.ServicesPage()}>
+          <a className="btn btn-primary" >بازگشت</a>
         </Link>
-      </p>
+
       <Suspense fallback={"بارگزاری"}>
         <Service />
       </Suspense>

@@ -50,30 +50,29 @@ export const ServicesList = () => {
   let recss = null
   return (
     <>
-      <div className="flex flex-col space-y-2">
-        <div dir="rtl" className="flex flex-col h-24 w-full p-1 items-center justify-center">
+      {/* <div className="bg-red-400 "> */}
+      {/* <div dir="rtl" className="flex flex-col h-24 w-full p-1 items-center justify-center">
           <Suspense fallback={<ScaleLoader />}>
             <SearchBar setSearchTerm={setSearchTerm} searchTerm={searchTerm} />
           </Suspense>
           <div dir="rtl" className="flex w-full p-1 text-xl items-center justify-center">
             <p className="">خدمات واقعیا افزوده آرپوت به شرح زیر است</p>
           </div>
-        </div>
+        </div> */}
 
+      <div className="grid grid-cols-1 md:grid-cols-3 fhd:grid-cols-2 gap-5 p-2" >
         <Suspense fallback={<ScaleLoader />}>
-          <div className="flex flex-wrap justify-center gap-x-5 gap-y-5 py-4">
-            {services
-              .filter((service: Service) => {
-                if (searchTerm === "") return service
-                else if (service.name.toLowerCase().includes(searchTerm.toLowerCase()))
-                  return service
-              })
-              .map((service: Service) => (
-                // <Suspense fallback={<ScaleLoader />}>
-                <ServiceCard key={service.id} service={service} />
-                // </Suspense>
-              ))}
-          </div>
+          {services
+            .filter((service: Service) => {
+              if (searchTerm === "") return service
+              else if (service.name.toLowerCase().includes(searchTerm.toLowerCase())) return service
+            })
+            .map((service: Service) => (
+              // <Suspense fallback={<ScaleLoader />}>
+              <ServiceCard key={service.id} service={service} />
+              // </Suspense>
+            ))}
+          {/* </div> */}
 
           <div className={page === 0 && !hasMore ? "hidden" : "btn-group justify-center"}>
             <button disabled={page === 0} onClick={goToPreviousPage} className={"btn btn-wide"}>

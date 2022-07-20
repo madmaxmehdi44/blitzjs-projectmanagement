@@ -8,11 +8,11 @@ const NewContactPage: BlitzPage = () => {
   const [createContactMutation] = useMutation(createContact)
 
   return (
-    <div>
-      <h1>Create New Contact</h1>
+    <div dir="rtl">
+      <h1>ارسال پیام</h1>
 
       <ContactForm
-        submitText="Create Contact"
+        submitText="ارسال"
         // TODO use a zod schema for form validation
         //  - Tip: extract mutation's schema into a shared `validations.ts` file and
         //         then import and use it here
@@ -21,7 +21,8 @@ const NewContactPage: BlitzPage = () => {
         onSubmit={async (values) => {
           try {
             const contact = await createContactMutation(values)
-            router.push(Routes.ShowContactPage({ contactId: contact.id }))
+            // router.push(Routes.ShowContactPage())
+            router.push(Routes.Home({ contactId: contact.id }))
           } catch (error: any) {
             console.error(error)
             return {

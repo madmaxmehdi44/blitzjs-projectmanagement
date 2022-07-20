@@ -16,7 +16,7 @@ export default function App({ Component, pageProps }: AppProps): JSX.Element {
   const getLayout = Component.getLayout || ((page) => page)
 
   return (
-    <Suspense fallback={<ScaleLoader />}>
+    <Suspense fallback={<div className="bg-blue-700 items-center justify-center fixed inset-0"><ScaleLoader /></div>}>
       <ErrorBoundary
         FallbackComponent={RootErrorFallback}
         onReset={useQueryErrorResetBoundary().clearReset}

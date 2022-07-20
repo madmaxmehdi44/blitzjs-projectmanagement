@@ -7,7 +7,7 @@ import {
   RouteUrlObject,
 } from "blitz"
 // import { Header } from "../components/Header"
-import NavBar from "../components/NavBar"
+import NavBar, { NavBar2 } from "../components/NavBar"
 import ModalIndex from "../components/ModalCompnent"
 import Footer from "../components/Footer"
 import { Header } from "../components/Header"
@@ -32,14 +32,17 @@ const Layout: BlitzLayout<{ title?: string; children?: React.ReactNode }> = ({
         <link rel="icon" href="/favicon.ico" />
         <meta charSet="utf-8" />
       </Head>
-
       {/* <ModalIndex /> */}
-      {/* <Header /> */}
-      <NavBar />
-      <div className="">{children}</div>
-      <div>
-        <Footer />
+      <div className="flex flex-col h-screen  justify-between">
+        <header className=" ">
+          <NavBar2 />
+        </header>
+        <main className="mb-auto no-scrollbar overflow-scroll">{children}</main>
+        <footer className="bg-blue-500 "><Footer /></footer>
       </div>
+      {/* <NavBar />
+        <div className="max-h-screen no-scrollbar overflow-scroll">{children}</div>
+        <Footer /> */}
     </>
   )
 }

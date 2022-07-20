@@ -30,7 +30,7 @@ const AuthLayout: BlitzLayout<{ title?: string; heading: string; children?: Reac
       <NavBar />
       <div className="">{children}</div>
       <div>
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </>
   )

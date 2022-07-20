@@ -62,13 +62,13 @@ export function ToggleTheme() {
       {/* <!-- sun icon --> */}
       <SunIcon
         className="swap-on fill-current w-12 h-12 text-yellow-200 rounded-full glass"
-        data-toggle-theme="acid,forest"
+        data-toggle-theme="retro,forest"
         data-act-class="ACTIVECLASS"
       />
       {/* <!-- moon icon --> */}
       <MoonIcon
         className="swap-off fill-current w-12 h-12  text-stone-200 rounded-full glass"
-        data-toggle-theme="forest,acid"
+        data-toggle-theme="forest,retro"
         data-act-class="ACTIVECLASS"
       />
       {/* <!-- moon icon --> */}
@@ -99,7 +99,7 @@ export const NavBar = () => {
     <>
       {/* <UserInfo /> */}
       <div
-        className="sticky bg-opacity-20  glass top-0 z-50 navbar   items-center justify-center "
+        className="sticky top-0 bg-opacity-20  glass z-50 navbar    items-center justify-center "
         dir="rtl"
       >
         {/* mobil nav */}
@@ -126,7 +126,83 @@ export const NavBar = () => {
                 <ToggleTheme />
               </Suspense>
             </label>
-{/* 
+            {/* 
+            <label tabIndex={0} className="dropdown dropdown-content">
+              <Suspense fallback={<ScaleLoader />}>
+                <ProfileLogin />
+              </Suspense>
+
+              <ul
+                tabIndex={0}
+                className="p-1 mt-3 min-w-max shadow menu menu-normal dropdown-content bg-base-100 rounded-box "
+              >
+                <li>
+                  <label htmlFor="my-modal-4">پروفایل</label>
+                </li>
+                <li>
+                  <label htmlFor="my-modal-5">ثبت نام</label>
+                </li>
+                <li>
+                  <Suspense fallback={"loading..."}>
+                    <UserInfo />
+                  </Suspense>
+                </li>
+              </ul>
+            </label> */}
+          </div>
+        </div>
+
+        <div className="navbar-center">
+          <div className="hidden md:flex">
+            <Suspense fallback={<SkewLoader />}>
+              <LinkMenusList />
+            </Suspense>
+          </div>
+        </div>
+        <div className="navbar-end">
+          <a className="btn btn-secondary  btn-circle">آرپوت</a>
+        </div>
+      </div>
+    </>
+  )
+}
+export const NavBar2 = () => {
+  useEffect(() => {
+    themeChange(false)
+    // 👆 false parameter is required for react project
+  }, [])
+  return (
+    <>
+      {/* <UserInfo /> */}
+      <div
+        className="navbar   glass items-center justify-center "
+        dir="rtl"
+      >
+        {/* mobil nav */}
+        <div className="flex md:hidden">
+          <label dir="rtl" className="dropdown">
+            <Suspense fallback={<ScaleLoader />}>
+              <MobileProfileLogin />
+            </Suspense>
+
+            <ul
+              tabIndex={0}
+              className="p-1 mt-3 shadow menu menu-title min-w-max dropdown-content bg-base-100 rounded-box "
+            >
+              <LinkMenusList />
+            </ul>
+          </label>
+        </div>
+        {/* end  mobil nav */}
+
+        <div className="navbar-start">
+          <div className="flex flex-row space-x-2">
+            <label tabIndex={0} className="mx-1">
+              <Suspense fallback={<ScaleLoader />}>
+                <ToggleTheme />
+              </Suspense>
+            </label>
+            {/* 
             <label tabIndex={0} className="dropdown dropdown-content">
               <Suspense fallback={<ScaleLoader />}>
                 <ProfileLogin />

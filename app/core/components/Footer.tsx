@@ -1,7 +1,7 @@
 const Footer = () => {
   return (
-    <footer className="footer items-center p-2 bg-neutral text-neutral-content">
-      <div className="items-center grid-flow-col">
+    <div className="bg-opacity-20  glass navbar   items-center justify-center ">
+      <div className="flex items-center">
         <svg
           width="36"
           height="36"
@@ -16,7 +16,7 @@ const Footer = () => {
         <p>ARPut.com</p>
         <p>Copyright © 2022 - All right reserved</p>
       </div>
-      <div className="grid-flow-col gap-4 md:place-self-center md:justify-self-end">
+      <div className="flex  gap-2 place-self-center justify-self-end">
         <a>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -51,7 +51,7 @@ const Footer = () => {
           </svg>
         </a>
       </div>
-    </footer>
+    </div>
     // <div className="w-full " dir="rtl">
     //   <footer className="footer  p-0 bg-base-200 text-base-content">
     //     <div>

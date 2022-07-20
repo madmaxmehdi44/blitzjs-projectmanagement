@@ -8,6 +8,9 @@ module.exports = {
       md: "768px",
       lg: "976px",
       xl: "1440px",
+      hd: "1920px",
+      fhd: "2048px",
+      fourk: "4096px",
     },
     extend: {
       colors: {

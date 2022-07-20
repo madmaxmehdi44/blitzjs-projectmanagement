@@ -9,9 +9,9 @@ class MyDocument extends Document {
 
   render() {
     return (
-      <Html lang="en" data-theme="light" className="no-scrollbar">
+      <Html lang="en" data-theme="light" className="w-full no-scrollbar">
         <DocumentHead />
-        <body className="font-sans leading-normal tracking-normal">
+        <body>
           <Main />
           <BlitzScript />
         </body>

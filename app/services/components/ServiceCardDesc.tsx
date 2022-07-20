@@ -7,15 +7,18 @@ export function ServiceCardDesc(props: { service: Service; setShowModal?: any; s
   const myroute = Routes.ShowServicePage({ serviceId: service.id })
   let serv = service ? (
     <>
-      <div className="card w-96 md:w-75  bg-base-100 shadow-2xl" dir="rtl">
+      <div
+        className="card cursor-pointer shadow-md hover:shadow-2xl w-full"
+        dir="rtl"
+        onClick={() => Router.push(`services/${service.id}`)}
+      >
         <figure>
           <Image
-            className="cursor-pointer object-cover object-center w-full transition-all scale-110 lg:h-48 md:h-36 duration-400 hover:scale-100"
+            className="object-cover object-center w-full transition-all scale-110 lg:h-48 md:h-36 duration-400 hover:scale-100"
             src={`${service.image_url}`}
             alt={service.name}
             width={450}
             height={250}
-            onClick={() => Router.push(`services/${service.id}`)}
           />
           {/* <TestModalsButton
             showModal={showModal}
@@ -37,7 +40,7 @@ export function ServiceCardDesc(props: { service: Service; setShowModal?: any; s
           <div className="card-actions justify-end">
             <Link href={Routes.ShowServicePage({ serviceId: service.id })}>
               <a className="btn btn-block btn-warning  hover:scale-105 rounded-xl animate-pulse">
-                بیشتر
+                ادامه...
               </a>
             </Link>
           </div>
