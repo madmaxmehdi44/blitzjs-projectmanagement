@@ -35,10 +35,10 @@ const Layout: BlitzLayout<{ title?: string; children?: React.ReactNode }> = ({
       {/* <ModalIndex /> */}
       <div className="flex flex-col h-screen  justify-between">
         <header className=" ">
-          <NavBar2 />
+          <NavBar />
         </header>
-        <main className="mb-auto no-scrollbar overflow-scroll">{children}</main>
-        <footer className="bg-blue-500 h-16"><Footer /></footer>
+        <main className="mb-auto no-scrollbar overflow-scroll pb-16">{children}</main>
+        <footer className="bg-blue-500 "><Footer /></footer>
       </div>
       {/* <NavBar />
         <div className="max-h-screen no-scrollbar overflow-scroll">{children}</div>

@@ -3,8 +3,7 @@ import { Head, Link, usePaginatedQuery, useRouter, BlitzPage, Routes } from "bli
 import getLinkMenus from "app/link-menus/queries/getLinkMenus"
 
 // const ITEMS_PER_PAGE = 100
-
-export const LinkMenusList = () => {
+export function LinkMenusList() {
   const [{ linkMenus, hasMore }] = usePaginatedQuery(getLinkMenus, {
     orderBy: { id: "desc" },
     // skip: ITEMS_PER_PAGE * page,
@@ -12,10 +11,12 @@ export const LinkMenusList = () => {
   })
 
   const catchLastId = linkMenus[0]?.id
+
   return (
-    <div className="btn-group" dir="ltr">
+    <div className="btn-group" >
       {linkMenus.map((linkMenu) => {
         let cssClass = "text-xl btn md:text-sm lg:text-xl"
+        // const cssClassMobile = "text-xl md:text-sm lg:text-xl flex flex-col w-full z-50"
         linkMenu.id === 1
           ? (cssClass = "text-xl rounded-full btn bg-violet-500 glass md:text-sm lg:text-xl")
           : linkMenu.id === catchLastId
@@ -26,7 +27,7 @@ export const LinkMenusList = () => {
         return (
           <>
             <Link key={linkMenu.id} href={`${linkMenu.urlLink}`}>
-              <button className={cssClass}>{linkMenu.name}</button>
+              <a  className={cssClass}>{linkMenu.name}</a>
             </Link>
           </>
         )
