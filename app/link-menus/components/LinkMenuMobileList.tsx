@@ -30,8 +30,8 @@ export function LinkMenusMobileList(props: { isNavOpen: any; setIsNavOpen: any }
           <li>
             <div className="flex flex-col w-full">
               <Link key={linkMenu.id} href={`${linkMenu.urlLink}`}>
-                <a >{linkMenu.name}</a>
-              </Link>{" "}
+                <a>{linkMenu.name}</a>
+              </Link>
             </div>
           </li>
         )

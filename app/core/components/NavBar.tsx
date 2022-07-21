@@ -137,7 +137,10 @@ export const NavBar = () => {
   return (
     <>
       {/* <UserInfo /> */}
-      <div className="sticky top-0 bg-opacity-20  glass z-50 navbar items-center justify-center ">
+      <div
+        dir="rtl"
+        className="sticky top-0 bg-opacity-20  glass z-50 navbar items-center justify-center "
+      >
         {/* mobil nav */}
         <div className="flex md:hidden">
           <label className="dropdown">
@@ -145,29 +148,19 @@ export const NavBar = () => {
               <MobileProfileLogin isNavOpen={isNavOpen} setIsNavOpen={setIsNavOpen} />
             </Suspense>
 
-            {isNavOpen ? (
-              <ul
-                tabIndex={0}
-                className="p-1 mt-3 shadow menu menu-title w-screen dropdown-content bg-base-100 rounded-box "
-              >
-                <LinkMenusMobileList isNavOpen={isNavOpen} setIsNavOpen={setIsNavOpen} />
-              </ul>
-            ) : null}
+            {/* {isNavOpen ? ( */}
+            <ul
+              tabIndex={0}
+              className="p-1 mt-3 shadow menu menu-title w-screen dropdown-content bg-base-100 rounded-box "
+            >
+              <LinkMenusMobileList isNavOpen={isNavOpen} setIsNavOpen={setIsNavOpen} />
+            </ul>
+            {/* // ) : null} */}
           </label>
         </div>
         {/* end  mobil nav */}
-        <div className="navbar-start">
-          <a className="btn btn-secondary  btn-circle">آرپوت</a>
-        </div>
 
-        <div className="navbar-center">
-          <div className="hidden md:flex">
-            <Suspense fallback={<SkewLoader />}>
-              <LinkMenusList />
-            </Suspense>
-          </div>
-        </div>
-        <div className="navbar-end">
+        <div className="navbar-start">
           <div className="flex flex-row space-x-2">
             <label tabIndex={0} className="mx-1">
               <Suspense fallback={<ScaleLoader />}>
@@ -198,6 +191,19 @@ export const NavBar = () => {
               </ul>
             </label> */}
           </div>
+        </div>
+        <div dir="ltr" className="navbar-center">
+          <div className="hidden md:flex">
+            <Suspense fallback={<SkewLoader />}>
+              <LinkMenusList />
+            </Suspense>
+          </div>
+        </div>
+
+        <div className="navbar-end">
+          <Link href={Routes.Home()}>
+            <a className="btn btn-primary   btn-circle">ARPut</a>
+          </Link>
         </div>
       </div>
     </>
