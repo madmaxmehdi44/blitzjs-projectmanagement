@@ -33,7 +33,7 @@ const Home: BlitzPage = (props) => {
           </div>
         </div> */}
         <video
-          className="w-screen min-h-screen "
+          className="w-screen min-h-screen object-cover md:object-contain"
           src={"/video1.mp4"}
           typeof="video/mp4"
           autoPlay
