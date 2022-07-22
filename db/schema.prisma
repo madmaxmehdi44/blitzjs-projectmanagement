@@ -113,7 +113,7 @@ model Contact {
   id        Int      @id @default(autoincrement())
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-  name      String
+  name      String?  @default("USER")
   email     String?
   message   String?
   mobile    String?

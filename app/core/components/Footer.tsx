@@ -2,7 +2,7 @@ import { Link } from "blitz"
 
 const Footer = () => {
   return (
-    <div className="bg-opacity-20 fixed bottom-0 glass navbar   items-center justify-between px-2 ">
+    <div className="bottom-0 navbar bg-slate-600 dark:bg-black dark:text-green-500 items-center justify-between px-2 ">
       <div className="flex items-start flex-wrap ">
         {/* <svg
           width="24"

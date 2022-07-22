@@ -28,7 +28,7 @@ export const LabeledTextField = forwardRef<HTMLInputElement, LabeledTextFieldPro
           {label}
           <input
             {...input}
-            className="px-1 py-2 border rounded focus:ring focus:outline-none ring-purple-200 block w-full my-2"
+            className="input input-bordered input-lg w-full px-1 py-2 border rounded focus:ring focus:outline-none ring-purple-200 block my-2"
             disabled={submitting}
             {...props}
             ref={ref}

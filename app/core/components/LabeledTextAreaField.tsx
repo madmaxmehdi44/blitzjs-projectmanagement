@@ -28,7 +28,7 @@ export const LabeledTextAreaField = forwardRef<HTMLInputElement, LabeledTextFiel
           {label}
           <Field
             component={"textarea"}
-            className="px-1 py-2 border rounded focus:ring focus:outline-none ring-purple-200 block w-full my-2"
+            className="textarea textarea-bordered h-24 px-1 py-2 border rounded focus:ring focus:outline-none ring-purple-200 block w-full my-2"
             {...props}
             {...input}
             disabled={submitting}

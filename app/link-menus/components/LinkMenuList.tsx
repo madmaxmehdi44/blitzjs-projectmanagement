@@ -28,7 +28,7 @@ export function LinkMenusList() {
             <Link key={linkMenu.id} href={`${linkMenu.urlLink}`}>
               <a
                 id={linkMenu.id.toString()}
-                onClick={(e) => setSeletedLink(linkMenu.id)}
+                onClick={(e) => {setSeletedLink(linkMenu.id)}}
                 className={
                   linkMenu.id === seletedLink ? cssClass.concat(" glass text-purple-700") : cssClass
                 }

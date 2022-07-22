@@ -14,14 +14,14 @@ import { Button } from "./Button"
 import LinkMenusMobileList from "app/link-menus/components/LinkMenuMobileList"
 
 const MobileProfileLogin = (props) => {
-  const { isNavOpen, setIsNavOpen } = props
+  const { setIsNavOpen } = props
 
   return (
     <>
       <MenuIcon
         tabIndex={0}
-        // onClick={() => setIsNavOpen((prev: Boolean) => !prev)}
-        className={`bg-indigo-500 shadow-lg shadow-indigo-500/50 btn btn-circle glass avatar w-12 h-12 cursor-pointer hover:bg-teal-500`}
+        onClick={() => setIsNavOpen((prev: Boolean) => !prev)}
+        className={`bg-indigo-500 btn btn-circle glass avatar w-12 h-12 cursor-pointer hover:bg-teal-500`}
       />
     </>
   )
@@ -139,19 +139,24 @@ export const NavBar = () => {
       {/* <UserInfo /> */}
       <div
         dir="rtl"
-        className="sticky top-0 bg-opacity-20  glass z-50 navbar items-center justify-center "
+        className="sticky top-0 bg-opacity-20  z-50 navbar items-center justify-center "
       >
         {/* mobil nav */}
         <div className="flex md:hidden">
           <label className="dropdown">
             <Suspense fallback={<ScaleLoader />}>
-              <MobileProfileLogin isNavOpen={isNavOpen} setIsNavOpen={setIsNavOpen} />
+              <MobileProfileLogin setIsNavOpen={setIsNavOpen} />
             </Suspense>
 
             {/* {isNavOpen ? ( */}
+
             <ul
               tabIndex={0}
-              className="p-1 mt-3 shadow menu menu-title w-screen dropdown-content bg-base-100 rounded-box "
+              className={
+                isNavOpen
+                  ? "p-1 mt-3 shadow menu menu-title w-screen dropdown-content bg-base-100 rounded-box "
+                  : "hidden"
+              }
             >
               <LinkMenusMobileList isNavOpen={isNavOpen} setIsNavOpen={setIsNavOpen} />
             </ul>
