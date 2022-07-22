@@ -66,13 +66,13 @@ export function ToggleTheme() {
       {/* <!-- sun icon --> */}
       <SunIcon
         className="swap-on fill-current w-12 h-12 text-yellow-200 rounded-full glass"
-        data-toggle-theme="retro,forest"
+        data-toggle-theme="light,dark"
         data-act-class="ACTIVECLASS"
       />
       {/* <!-- moon icon --> */}
       <MoonIcon
         className="swap-off fill-current w-12 h-12  text-stone-200 rounded-full glass"
-        data-toggle-theme="forest,retro"
+        data-toggle-theme="dark,light"
         data-act-class="ACTIVECLASS"
       />
       {/* <!-- moon icon --> */}
@@ -88,7 +88,7 @@ export function ToggleTheme2() {
       {/* <!-- sun icon --> */}
       <svg
         className="swap-on fill-current w-10 h-10"
-        data-toggle-theme="retro,forest"
+        data-toggle-theme="synthwave,aqua"
         data-act-class="ACTIVECLASS"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
@@ -99,7 +99,7 @@ export function ToggleTheme2() {
       {/* <!-- moon icon --> */}
       <svg
         className="swap-off fill-current w-10 h-10"
-        data-toggle-theme="forest,retro"
+        data-toggle-theme="aqua,synthwave"
         data-act-class="ACTIVECLASS"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
@@ -137,10 +137,7 @@ export const NavBar = () => {
   return (
     <>
       {/* <UserInfo /> */}
-      <div
-        dir="rtl"
-        className="sticky top-0 bg-opacity-20  z-50 navbar items-center justify-center "
-      >
+      <div dir="rtl" className="sticky  top-0 z-50 navbar items-center justify-center ">
         {/* mobil nav */}
         <div className="flex md:hidden">
           <label className="dropdown">
