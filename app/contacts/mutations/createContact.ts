@@ -3,7 +3,7 @@ import db from "db"
 import { z } from "zod"
 
 const CreateContact = z.object({
-  // name: z.string(),
+  name: z.string(),
   email: z.string(),
   message: z.string(),
   mobile: z.string(),

@@ -18,7 +18,7 @@ export const ContactsList = () => {
   const goToNextPage = () => router.push({ query: { page: page + 1 } })
 
   return (
-    <div>
+    <div >
       <ul>
         {contacts.map((contact) => (
           <li key={contact.id}>
@@ -46,7 +46,7 @@ const ContactsPage: BlitzPage = () => {
         <title>Contacts</title>
       </Head>
 
-      <div>
+      <div >
         <p>
           <Link href={Routes.NewContactPage()}>
             <a>Create Contact</a>

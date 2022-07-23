@@ -17,11 +17,11 @@ export const Contact = () => {
       </Head>
 
       <div>
-        <h1>Contact {contact.id}</h1>
+        <h1>تماس با ما {contact.id}</h1>
         <pre>{JSON.stringify(contact, null, 2)}</pre>
 
         <Link href={Routes.EditContactPage({ contactId: contact.id })}>
-          <a>Edit</a>
+          <a>ویرایش</a>
         </Link>
 
         <button
@@ -46,7 +46,7 @@ const ShowContactPage: BlitzPage = () => {
     <div>
       <p>
         <Link href={Routes.ContactsPage()}>
-          <a>Contacts</a>
+          <a>تماس با ما</a>
         </Link>
       </p>
 

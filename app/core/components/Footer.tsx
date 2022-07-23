@@ -2,7 +2,7 @@ import { Link } from "blitz"
 
 const Footer = () => {
   return (
-    <div className="sticky bottom-0 navbar items-center justify-between px-2 ">
+    <div className="sticky  border-t-2 shadow-inner  bottom-0 navbar items-center justify-between px-2 ">
       <div className="flex items-start flex-wrap ">
         {/* <svg
           width="24"

@@ -9,11 +9,11 @@ const NewContactPage: BlitzPage = () => {
   const [createContactMutation] = useMutation(createContact)
   const userRole = useCurrentUser()?.role
   return (
-    <div className="flex flex-col  border-opacity-50 items-center justify-center " dir="rtl">
+    <div className="flex flex-col border-opacity-50 items-center justify-center " dir="rtl">
       <h1 className="flex justify-center">ارسال پیام</h1>
 
       <ContactForm
-        className="form-control w-11/12 md:w-3/6 "
+        className="form-control w-11/12 md:w-3/6 m-4 p-1 shadow-xl"
         submitText="ارسال پیام"
         // TODO use a zod schema for form validation
         //  - Tip: extract mutation's schema into a shared `validations.ts` file and

@@ -3,7 +3,7 @@ module.exports = {
   content: ["{pages,app}/**/*.{js,ts,jsx,tsx}"],
   darkMode: "media",
   daisyui: {
-    themes: ["synthwave", "aqua"],
+    themes: ["emerald", "dark"],
   },
   theme: {
     screens: {

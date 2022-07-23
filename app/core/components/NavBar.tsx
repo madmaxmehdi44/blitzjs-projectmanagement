@@ -88,7 +88,7 @@ export function ToggleTheme2() {
       {/* <!-- sun icon --> */}
       <svg
         className="swap-on fill-current w-10 h-10"
-        data-toggle-theme="synthwave,aqua"
+        data-toggle-theme="dark,emerald"
         data-act-class="ACTIVECLASS"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
@@ -99,7 +99,7 @@ export function ToggleTheme2() {
       {/* <!-- moon icon --> */}
       <svg
         className="swap-off fill-current w-10 h-10"
-        data-toggle-theme="aqua,synthwave"
+        data-toggle-theme="emerald,dark"
         data-act-class="ACTIVECLASS"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
@@ -137,7 +137,7 @@ export const NavBar = () => {
   return (
     <>
       {/* <UserInfo /> */}
-      <div dir="rtl" className="sticky  top-0 z-50 navbar items-center justify-center ">
+      <div dir="rtl" className="sticky  shadow-xl top-0 z-50 navbar items-center justify-center ">
         {/* mobil nav */}
         <div className="flex md:hidden">
           <label className="dropdown">

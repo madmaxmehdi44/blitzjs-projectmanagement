@@ -8,10 +8,10 @@ export { FORM_ERROR } from "app/core/components/Form"
 export function ContactForm<S extends z.ZodType<any, any>>(props: FormProps<S>) {
   return (
     <Form<S> {...props}>
-      {/* <LabeledTextField name="name" label="نام" placeholder="نام" /> */}
+      <LabeledTextField name="name" label="نام" placeholder="نام" />
       <LabeledTextField name="email" label="پست الکترونیک" placeholder="پست الکترونیک" />
-      <LabeledTextAreaField name="message" label="پیام" placeholder="پیام" />
-      <LabeledTextField name="mobile" label="موبایل" placeholder="موبایل" />
+      <LabeledTextField name="mobile" label="شماره تماس" placeholder="شماره تماس" />
+      <LabeledTextAreaField name="message" label="توضیحات" placeholder="توضیحات" />
     </Form>
   )
 }
