@@ -2,8 +2,9 @@ import { Link } from "blitz"
 
 const Footer = () => {
   return (
-    <div className="sticky  border-t-2 shadow-inner  bottom-0 navbar items-center justify-between px-2 ">
-      <div className="flex items-start flex-wrap ">
+    <div className="sticky  shadow-inner  bottom-0 navbar items-center justify-between px-2 w-full ">
+      {/* // <div className="fixed bottom-0 navbar items-center justify-between px-2 "> */}
+      <div className="flex items-start flex-wrap">
         {/* <svg
           width="24"
           height="24"
@@ -17,7 +18,11 @@ const Footer = () => {
         </svg> */}
         <div className="w-full">ARPut.com © 2022</div>
         {/* <div className="text-red-600 flex-auto">Copyright © 2022</div> */}
-        <div className="w-full"><Link href={"https://en.wikipedia.org/wiki/All_rights_reserved"} passHref >All rights reserved.</Link> </div>
+        <div className="w-full">
+          <Link href={"https://en.wikipedia.org/wiki/All_rights_reserved"} passHref>
+            All rights reserved.
+          </Link>{" "}
+        </div>
       </div>
       <div className="flex  gap-4 place-self-center justify-self-end">
         <a>

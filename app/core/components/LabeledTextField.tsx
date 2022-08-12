@@ -21,9 +21,9 @@ export const LabeledTextField = forwardRef<HTMLInputElement, LabeledTextFieldPro
     })
 
     const normalizedError = Array.isArray(error) ? error.join(", ") : error || submitError
-
+    
     return (
-      <div {...outerProps}>
+      <div {...outerProps} >
         <label className="flex flex-col items-start">
           {label}
           <input

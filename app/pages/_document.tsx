@@ -9,7 +9,7 @@ class MyDocument extends Document {
 
   render() {
     return (
-      <Html lang="en" data-theme="emerald" className="w-full no-scrollbar">
+      <Html lang="fa" data-theme="emerald" className="w-full no-scrollbar font-body">
         <DocumentHead />
         <body>
           <Main />

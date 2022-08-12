@@ -6,6 +6,10 @@ module.exports = {
     themes: ["emerald", "dark"],
   },
   theme: {
+    fontFamily: {
+      display: ["Vazir"],
+      body: ["Vazir"],
+    },
     screens: {
       sm: "480px",
       md: "768px",

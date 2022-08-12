@@ -18,7 +18,7 @@ export const ContactsList = () => {
   const goToNextPage = () => router.push({ query: { page: page + 1 } })
 
   return (
-    <div >
+    <div>
       <ul>
         {contacts.map((contact) => (
           <li key={contact.id}>

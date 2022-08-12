@@ -1,5 +1,16 @@
 @tailwind base;
 @tailwind components;
+
+@font-face {
+  font-family: Vazir;
+  src: url("fonts/vazir/Vazir-Regular.eot");
+  src: url("fonts/vazir/Vazir-Regular.eot?#iefix") format("embedded-opentype"),
+    url("fonts/vazir/Vazir-Regular.woff2") format("woff2"),
+    url("fonts/vazir/Vazir-Regular.woff") format("woff"),
+    url("fonts/vazir/Vazir-Regular.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
 @tailwind utilities;
 
 @layer components {

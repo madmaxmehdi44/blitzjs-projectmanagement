@@ -79,6 +79,7 @@ export function ToggleTheme() {
     </label>
   )
 }
+
 export function ToggleTheme2() {
   return (
     <label className="swap swap-rotate">
@@ -151,7 +152,7 @@ export const NavBar = () => {
               tabIndex={0}
               className={
                 isNavOpen
-                  ? "p-1 mt-3 shadow menu menu-title w-screen dropdown-content bg-base-100 rounded-box "
+                  ? "p-1 mt-3 shadow menu menu-title bg-zinc-200 dropdown-content rounded-box "
                   : "hidden"
               }
             >

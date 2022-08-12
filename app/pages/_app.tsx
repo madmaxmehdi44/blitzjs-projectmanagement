@@ -8,9 +8,9 @@ import {
   useQueryErrorResetBoundary,
 } from "blitz"
 import React, { Suspense } from "react"
-import "app/core/styles/index.css"
 import ScaleLoader from "react-spinners/ScaleLoader"
 import LoginForm from "app/auth/components/LoginForm"
+import "app/core/styles/index.css"
 
 export default function App({ Component, pageProps }: AppProps): JSX.Element {
   const getLayout = Component.getLayout || ((page) => page)
@@ -24,12 +24,12 @@ export default function App({ Component, pageProps }: AppProps): JSX.Element {
       }
     >
       {/* <React.StrictMode> */}
-        <ErrorBoundary
-          FallbackComponent={RootErrorFallback}
-          onReset={useQueryErrorResetBoundary().clearReset}
-        >
-          {getLayout(<Component {...pageProps} />)}
-        </ErrorBoundary>
+      <ErrorBoundary
+        FallbackComponent={RootErrorFallback}
+        onReset={useQueryErrorResetBoundary().clearReset}
+      >
+        {getLayout(<Component {...pageProps} />)}
+      </ErrorBoundary>
       {/* </React.StrictMode> */}
     </Suspense>
   )
