@@ -35,14 +35,22 @@ export function ServiceCardDesc(props: { service: Service; setShowModal?: any; s
         </figure>
 
         <div className="card-body" dir="rtl">
-          <h2 className="card-title">{service.name}</h2>
-          <p className="card-compact">{service.long_description?.slice(0, 150)} ...</p>
-          <div className="card-actions justify-end">
-            <Link href={Routes.ShowServicePage({ serviceId: service.id })}>
-              <a className="btn btn-block btn-warning  hover:scale-105 rounded-xl animate-pulse">
-                ادامه...
-              </a>
-            </Link>
+          <h2 className="card-title text-secondary">{service.name}</h2>
+          <p className="card-compact  text-primary-content">{service.long_description?.slice(0, 180)} ...</p>
+          <div className="card-actions bg-gray-50 ">
+            <div className="justify-evenly flex gap-2 px-1 py-0.5 w-full">
+              <Link href={Routes.ShowServicePage({ serviceId: service.id })}>
+                <a className="w-5 h-5 btn-error  shadow-inner  hover:shadow-violet-700 mask mask-heart hover:scale-105  hover:animate-bounce"></a>
+              </Link>
+              <Link href={Routes.ShowServicePage({ serviceId: service.id })}>
+                <a  className="relative w-5 h-5 btn-secondary shadow-inner  hover:shadow-violet-700 mask mask-hexagon hover:animate-spin">
+                  <p className="absolute mx-auto text-center">....</p>
+                </a>
+              </Link>
+              <Link href={Routes.ShowServicePage({ serviceId: service.id })}>
+                <a className="w-5 h-5 btn-warning mask mask-star-2 hover:scale-105 shadow-inner  hover:shadow-violet-700  animate-pulse"></a>
+              </Link>
+            </div>
           </div>
         </div>
       </div>

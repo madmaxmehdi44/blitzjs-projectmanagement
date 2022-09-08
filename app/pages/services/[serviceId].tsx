@@ -35,59 +35,72 @@ export const Service = () => {
       </Head>
       <div className="flex min-h-full items-center justify-center align-middle">
         {/* <div className=""></div> */}
-        <div className="flex w-full mt-10 mb-5 p-2 shadow-lg shadow-violet-800  text-center  justify-center rounded-lg">
-          <div className="rounded-lg min-w-full ">
-            <h1 className="text-center text-2xl font-bold leading-relaxed tracking-widest rounded-lg shadow-lg   shadow-secondary  p-4 items-center justify-center align-middle">
-              {service.name}
-            </h1>
+        <div className="flex w-full mt-3 mb-5 p-4 shadow-lg shadow-violet-800  text-center  justify-center rounded-lg">
+          <div className="rounded-lg min-w-full  ">
+            <div className="w-full flex shadow-md justify-between px-2  shadow-secondary    ">
+              <div className="flex items-center justify-center shadow-inner shadow-red-900">
+                <Link href={Routes.ServicesPage()}>
+                  <a className="btn btn-info mask mask-triangle-3  rounded-full">
+                    <h1 className="text-center text-xs  items-center justify-center ">
+                      بازگشت
+                    </h1>
+                  </a>
+                </Link>
+              </div>
+              <div>
+                <p className="text-center text-2xl    items-center justify-center ">
+                  {service.name}
+                </p>
+              </div>
+              <div>
+                <p className="text-center text-xs  leading-relaxed items-center justify-center ">
+                  {service.createdAt.getFullYear()}
+                  {service.createdAt.getMonth()}
+                  {service.createdAt.getDay()}
+                </p>
+                <p className="text-center text-1xl font-bold leading-relaxed rounded-b-lg items-center justify-center ">
+                </p>
+                <p className="text-center text-xs  leading-relaxed items-center justify-center ">
+                </p>
+              </div>
+            </div>
 
             <div
-              className="text-2xl leading-relaxed tracking-widest
-              indent-1 text-justify py-4 px-4 font-semibold
-              drop-shadow shadow-sm shadow-black rounded-lg my-6"
+              className="text-clip leading-relaxed indent-1 text-justify py-4 px-4 font-semibold
+              drop-shadow shadow-sm shadow-black my-1"
             >
-              <p
-                className="font-normal text-2xl leading-relaxed tracking-widest
-              indent-1 text-justify items-center align-text-bottom mb-4 px-2 prose"
-                dir="rtl"
-              >
-                {service.short_description}
-              </p>
-
-              <div className="w-full p-0 overflow-hidden mx-auto border-violet-900 border-2  rounded-xl shadow-sm shadow-violet-800 ">
+              <div className="w-[80%] md:w-[45%] p-0 overflow-hidden mx-auto border-violet-900 border-2  rounded-xl shadow-sm shadow-violet-800 ">
                 <Suspense fallback={<ScaleLoader />}>
                   <PlyrComponent video_url={service.video_url} />
                 </Suspense>
               </div>
+
+              <p className="p-2 text-primary-content text-justify  mb-4 px-4" dir="rtl">
+                {service.short_description}
+              </p>
+
               <p
-                className="text-2xl leading-relaxed tracking-widest
-              indent-1 text-justify py-1 mt-4 px-4 font-semibold
+                className="text-md leading-relaxed text-primary-content
+              indent-1 text-justify py-1 mt-4 px-4 
               drop-shadow"
                 dir="rtl"
               >
                 {service.long_description}
               </p>
-              <div className=" w-full mx-auto py-10  px-1  my-1 rounded-xl bg-black">
+              <div className="w-[80%] md:w-[45%] p-0 overflow-hidden mx-auto border-violet-900 border-2  rounded-xl shadow-sm shadow-violet-800 ">
                 <Image
                   src={service.image_url || ""}
                   alt={service.name}
                   width={"100%"}
-                  height={"50%"}
+                  height={"100%"}
                   layout="responsive"
-                  className={"prose object-cover py-10  px-1 "}
+                  className={" prose object-cover"}
                 />
-
+                {/* 
                 <label htmlFor="my-modal-3" className="btn modal-bottom">
                   پروفایل
-                </label>
+                </label> */}
               </div>
-              <p
-                className="font-normal text-2xl leading-relaxed tracking-widest
-              indent-1 text-justify py-6 px-2"
-                dir="rtl"
-              >
-                {service.short_description}
-              </p>
             </div>
             {userRole === "ADMIN" ? (
               <>
@@ -120,11 +133,6 @@ export const Service = () => {
 const ShowServicePage: BlitzPage = () => {
   return (
     <>
-     
-        <Link  href={Routes.ServicesPage()}>
-          <a className="btn btn-primary" >بازگشت</a>
-        </Link>
-
       <Suspense fallback={"بارگزاری"}>
         <Service />
       </Suspense>
